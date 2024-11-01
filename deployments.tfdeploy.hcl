@@ -1,5 +1,5 @@
 identity_token "aws" {
-  audience = ["<INSERT YOUR AUDIENCE HERE>"]
+  audience = ["aws.workload.identity"]
 }
 
 identity_token "k8s" {
@@ -7,12 +7,12 @@ identity_token "k8s" {
 }
 
 locals {
-  role_arn = "<INSERT YOUR ARN HERE>"
+  role_arn = "arn:aws:iam::419233841444:role/tfc-role"
   tfc_kubernetes_audience = "k8s.workload.identity"
   tfc_hostname = "https://app.terraform.io"
-  organization_name = "<INSERT HCP TERRAFORM ORG NAME>"
-  eks_clusteradmin_arn = "arn:aws:iam::<INSERT AWS ACCOUNT NUMBER>:<INSERT ROLE NAME TO BE CREATED>"
-  eks_clusteradmin_username = "<INSERT USERNAME TO BE CREATED>"
+  organization_name = "aleareed"
+  eks_clusteradmin_arn = "arn:aws:iam::419233841444:eksadm"
+  eks_clusteradmin_username = "eksadm"
 }
 
 deployment "development" {
